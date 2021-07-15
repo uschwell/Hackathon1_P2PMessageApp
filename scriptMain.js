@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> messagingStart
 /*!
 * Start Bootstrap - Simple Sidebar v6.0.2 (https://startbootstrap.com/template/simple-sidebar)
 * Copyright 2013-2021 Start Bootstrap
@@ -24,3 +29,22 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+<<<<<<< HEAD
+=======
+
+/* 
+Create array with responses
+Create div for each box (which includes avatar, textbox and name)
+append div for every new message (each message = 1 div)
+
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+*/
+>>>>>>> Stashed changes
+=======
+*/
+>>>>>>> Stashed changes
+=======
+*/
+>>>>>>> Stashed changes
+>>>>>>> messagingStart
