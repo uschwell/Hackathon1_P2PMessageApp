@@ -1,0 +1,14 @@
+ <!-- Page content-->
+				<section id="home" class="d-flex position-relative vh-100 cover hero">
+					<div class="container-fluid bgColor d-flex align-items-center">
+						<div class="row">
+          					<div class="col-md-12">
+								<div class="jumbotron jumbotron-fluid">
+									<h1 class="display-4 welcome">Welcome, Fellow Peer</h1>
+                    				<p class="lead">Connecting Peers Around the Globe<br>
+									<i>One Phone at a Time</i>
+									</p>
+								</div>
+                			</div>
+						</div>
+				</section>
