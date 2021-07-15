@@ -32,5 +32,9 @@ Create array with responses
 Create div for each box (which includes avatar, textbox and name)
 append div for every new message (each message = 1 div)
 
+<<<<<<< Updated upstream
+*/
+>>>>>>> Stashed changes
+=======
 */
 >>>>>>> Stashed changes
