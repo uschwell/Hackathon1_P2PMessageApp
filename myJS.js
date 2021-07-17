@@ -1,7 +1,7 @@
 
 
 //we use an array to store the devices we are able to see/connect to 
-const fakePhones=["UrisPhone","Rina Cell","RandomStranger227","HomeNetWork"];
+const fakePhones=["UrisPhone","Rina Cell","RandomStranger227","HomeNetWork", "SuspiciousPhone#12356"];
 
 
 
@@ -53,7 +53,7 @@ function connectAnimation(divLocation){
 	newTemp.classList.add('newTempClass')
 	let loadText=document.createElement("DIV");
 	loadText.setAttribute('style','text-align: center');
-	loadText.innerHTML='Loading';
+	loadText.innerHTML='Searching';
 
 	newTemp.innerHTML=`<div class="d-flex justify-content-center"><div class="spinner-border" role="status">
 	<span class="sr-only"></span>  </div></div>`;
@@ -65,7 +65,5 @@ function connectAnimation(divLocation){
     	divLocation.removeChild(newTemp);
     	newTemp.innerHTML='';
     	createList();
-    }, 3000);
-    console.log("I waited");
-	  //divLocation.removeChild(divLocation.lastChild);
+    }, 1000);
 }

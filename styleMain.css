@@ -1,0 +1,114 @@
+body{
+    margin-top:20px;
+    background:#eee;
+}
+.row.row-broken {
+    padding-bottom: 0;
+}
+.col-inside-lg {
+    padding: 20px;
+	height: 100%;
+/*	overflow-y: hidden;*/
+}
+.chat-body {
+    height: calc(100vh - 180px);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	background: linear-gradient(to top, transparent 0%, royalblue 100%);
+}
+.decor-default {
+    background-color: #ffffff;
+}
+.chat .avatar {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.chat .avatar img {
+    display: block;
+    border-radius: 20px;
+    height: 100%;
+}
+
+/*****************LEFT SIDE *******************/
+
+.chat-body .answer {
+	margin-bottom: 5px;
+}
+
+.chat-body .answer.left {
+    padding: 0;
+    text-align: left;
+    float: left;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+.chat-body .answer.left .avatar {
+    left: 4px;
+}
+.chat-body .answer .user {
+    line-height: 36px;
+}
+.chat-body .answer.left .text {
+    background:lightgrey;
+    color: #333333;
+    border-radius: 10px 10px 10px 0;
+}
+.chat-body .answer .text {
+    padding: 12px;
+    font-size: 16px;
+    line-height: 26px;
+    position: relative;
+}
+
+/*****************Right Side*******************/
+
+.chat-body .answer.right {
+    padding: 0;	
+    float: right;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-end;
+
+}
+.chat-body .answer.right .avatar {
+    align-content: right;
+}
+.chat-body .answer.right .text {
+    background: #7266ba;
+    color: #ffffff;
+    border-radius: 10px 10px 0 10px;
+}
+
+/*****************Message Input Box*******************/
+
+.answer-add {
+	 display: flex;
+	 flex-wrap: wrap;
+	 padding: 20px;
+	 position: relative;
+}
+
+.form-group {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.send {
+	border: none;
+	position: absolute;
+	background: transparent;
+}
+
+textarea {
+	resize: none;
+	z-index: 0;
+	position: relative;
+	outline: none;
+	width: 100vw;
+}
+

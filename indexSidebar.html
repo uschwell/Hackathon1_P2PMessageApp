@@ -5,14 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Simple Sidebar</title>
+        <title>P2P Messaging</title>
         <!-- Include Icon-->
         <!--<link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="sideBar_style.css" rel="stylesheet" />
         <link href="myStyle.css" rel="stylesheet" />
+
+<!--          <link href="styleBoot.css" rel="stylesheet"> -->
+
+        <link href="font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+        <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="styleMain.css" type="text/css" rel="stylesheet"> 
+
     </head>
-    <body>
+    <body onload="alertTimeout()">
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
             <div class="border-end bg-blue" id="sidebar-wrapper">
@@ -26,25 +33,28 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a> -->
                 </div>
+                <!-- Chat History -->
+<!--                 <div class="list-group list-group-flush" id="chatHistory" style="text-align: center; background-color: lightcyan;">Chat History:
+                </div> -->
             </div>
             <!-- Page content wrapper-->
             <div id="page-content-wrapper">
                 <!-- Top navigation-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <nav class="navbar navbar-expand-lg navbar-light bg-blue border-bottom">
                     <div class="container-fluid">
-                        <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                        <button class="btn btn-primary" id="sidebarToggle">Menu</button>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                                <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="#!">Help</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#!">FAQ</a></li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#!">Action</a>
-                                        <a class="dropdown-item" href="#!">Another action</a>
+                                        <a class="dropdown-item" href="#!">My Profile</a>
+                                        <a class="dropdown-item" href="#!">Settings</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#!">Something else here</a>
+                                        <a class="dropdown-item" href="indexSidebar.html">Log Out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -52,23 +62,54 @@
                     </div>
                 </nav>
                 <!-- Page content-->
-                <div class="container-fluid">
-                    <h1 class="mt-4">Simple Sidebar</h1>
-                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                    <p>
-                        Make sure to keep all page content within the
-                        <code>#page-content-wrapper</code>
-                        . The top navbar is optional, and just for demonstration. Just create an element with the
-                        <code>#sidebarToggle</code>
-                        ID which will toggle the menu when clicked.
-                    </p>
-                </div>
-            </div>
+                <section id="home" class="d-flex position-relative vh-100">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 chat" style="overflow: hidden; outline: none;">
+                                <div class="col-inside-lg decor-default">
+                                    <div class="chat-body" id="chat-body">
+                                        <div class="answer left" id="answer-left">
+                                            <div class="avatar left" id="avatar-left">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User name" id="img-left">
+                                            </div>
+                                            <div class="user" id="user-left">Rina</div>
+                                            <div class="text" id="text-left">
+                                                Hey, Uri
+                                            </div>
+                                            <div id="wave">
+                                                <span class="dot"></span>
+                                                <span class="dot"></span>
+                                                <span class="dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="answer right" id="answer-right">
+                                            <div class="avatar right"id="avatar-right">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="User name" id="img-right">
+                                            </div>
+                                            <div class="user" id="user-right">Uri</div>
+                                            <div class="text" id="text-right">
+                                                Hey Rina, How goes it?
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="answer-add" id="answer">
+                            <div class="form-group">
+                                <label for="message"></label>
+                                <textarea placeholder="Type a message" class="form-control rounded-5 message" id="message" name="message" cols="180" rows="2"></textarea>
+                                <button type="submit" class="send" id="send"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="sideBar_JS.js"></script>
         <script src="myJS.js"></script>
+        <script src="scriptMain.js"></script>
     </body>
 </html>
